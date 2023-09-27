@@ -188,7 +188,7 @@ void test_read_channel_1_with_wrong_ibus_handle(void) {
     /* Read channel 1 */
     channelValue = FSA8S_RC_ReadChannel(NULL, channel);
 
-    /* Test if channels values are 0 */
+    /* Test if channel value is 0 */
     TEST_ASSERT_EQUAL(0, channelValue);
 }
 
