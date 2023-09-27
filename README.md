@@ -17,4 +17,4 @@ On the other hand, this unit testing is applied using Ceedling. For more informa
 1. Only one mock has been employed to replace the original function definition in the low-level abstraction layer part of the driver.
 2. Data type mock has been defined and can be found in the "mock_data.h" file. This is because orginally, the driver used the UART_HandleTypeDef data type which is located in the HAL (Hardware Abstraction Layer) library of STM and there are many dependencies.
 3. 6 Test Cases have been implemented to test the two public functions available in the tested source file.
-4. To run the test, you should type in the terminal: `ceedling`
+4. To run the tests, you should type in the terminal: `ceedling`
