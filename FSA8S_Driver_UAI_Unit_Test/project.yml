@@ -76,6 +76,41 @@
   :gcovr:
     :html_medium_threshold: 75
     :html_high_threshold: 90
+  :utilities:
+    - gcovr
+:gcov_linker:
+    :executable: gcc-5
+    :arguments:
+        - -ftest-coverage
+        - -fprofile-arcs
+        - -O0  # never optimize for this
+        - ${1}
+        - -lm
+        - -D$: COLLECTION_DEFINES_TEST_AND_VENDOR
+        - -I"$": COLLECTION_PATHS_TEST_SUPPORT_SOURCE_INCLUDE_VENDOR
+        - -I"$": COLLECTION_PATHS_TEST_TOOLCHAIN_INCLUDE
+        - -o ${2}
+:gcov_fixture:
+    :executable: ${1}
+:gcov_report:
+    :executable: gcov
+    :arguments:
+        - -n
+        - -p
+        - -b
+        - -o "$": GCOV_BUILD_OUTPUT_PATH
+        - "\"${1}\""
+:gcov_post_report:
+    :executable: gcovr
+    :optional: FALSE
+    :arguments:
+        - -p
+        - -b
+        - -e '.*tools.*|.*build.*|.*vendor/ceedling.*|.*test/test.*'
+        - --object-directory= "$": GCOV_BUILD_OUTPUT_PATH
+        - --html
+        - --html-details
+        - -o build/artifacts/gcov/index.html
 
 #:tools:
 # Ceedling defaults to using gcc for compiling, linking, etc.
@@ -96,8 +131,10 @@
 
 :plugins:
   :load_paths:
-    - "#{Ceedling.load_path}"
+    - vendor/ceedling/plugins
   :enabled:
     - stdout_pretty_tests_report
     - module_generator
+    - fake_function_framework # Enable FFF
+    - gcov
 ...

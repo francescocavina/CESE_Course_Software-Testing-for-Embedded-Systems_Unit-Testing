@@ -38,8 +38,8 @@
  */
 
 /* --- Headers files inclusions ---------------------------------------------------------------- */
-#include "FS-A8S_driver_UAI.h"
-#include "FS-A8S_driver_calibration.h"
+#include "FS_A8S_driver_UAI.h"
+#include "FS_A8S_driver_calibration.h"
 
 /* --- Macros definitions ---------------------------------------------------------------------- */
 // #define USE_FREERTOS
@@ -74,7 +74,7 @@ static bool_t FSA8S_RC_CheckFirstBytes();
 /**
  * @brief  Checks if data received is not corrupted calculating a checksum.
  * @param  None
- * @retval true:  If data is is correct.
+ * @retval true:  If data is correct.
  *         false: If data is corrupted.
  */
 static bool_t FSA8S_RC_Checksum();
@@ -272,4 +272,5 @@ uint16_t FSA8S_RC_ReadChannel(IBUS_HandleTypeDef_t * hibus, FSA8S_RC_CHANNEL_t c
 
     return hibus->data[channel - IBUS_CHANNEL_NUM_OFFSET];
 }
+
 /* --- End of file ----------------------------------------------------------------------------- */
