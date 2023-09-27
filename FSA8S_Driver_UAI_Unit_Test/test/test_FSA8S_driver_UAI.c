@@ -193,7 +193,3 @@ void test_read_channel_1_with_wrong_ibus_handle(void) {
 }
 
 /* --- End of file ----------------------------------------------------------------------------- */
-
-// ceedling utils:gcov
-// ceedling clobber
-// ceedling clobber gcov:all utils:gcov
