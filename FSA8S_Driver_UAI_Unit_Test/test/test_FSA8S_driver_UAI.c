@@ -111,7 +111,8 @@ void test_initialize_second_device_with_proper_uart_handle(void) {
     TEST_ASSERT_NULL(rc_controller2);
 }
 
-/* TEST CASE NO. 4: Read Channel 1 and 14 with proper iBus handle.
+/*
+ * TEST CASE NO. 4: Read Channel 1 and 14 with proper iBus handle.
  * Note: Internal buffer is filled automatically through Direct Memory Access (DMA) with a circular
  *       FIFO. Therefore, in order to simulate the DMA, buffer is filled inside the test function.
  */
@@ -141,7 +142,8 @@ void test_read_channel_1_and_14_with_proper_ibus_handle(void) {
     TEST_ASSERT_EQUAL(500, channelValue14);
 }
 
-/* TEST CASE NO. 5: Read Channel 0 and 15 (out of limits) with proper iBus handle.
+/*
+ * TEST CASE NO. 5: Read Channel 0 and 15 (out of limits) with proper iBus handle.
  * Note: Internal buffer is filled automatically through Direct Memory Access (DMA) with a circular
  *       FIFO. Therefore, in order to simulate the DMA, buffer is filled inside the test function.
  */
@@ -171,7 +173,8 @@ void test_read_channel_0_and_15_with_proper_ibus_handle(void) {
     TEST_ASSERT_EQUAL(0, channelValue15);
 }
 
-/* TEST CASE NO. 6: Read Channel 1 with wrong iBus handle.
+/*
+ * TEST CASE NO. 6: Read Channel 1 with wrong iBus handle.
  * Note: Internal buffer is filled automatically through Direct Memory Access (DMA) with a circular
  *       FIFO. Therefore, in order to simulate the DMA, buffer is filled inside the test function.
  */
