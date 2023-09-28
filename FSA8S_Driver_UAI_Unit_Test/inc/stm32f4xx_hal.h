@@ -45,11 +45,11 @@ extern "C" {
 
 /* --- Public data type declarations ----------------------------------------------------------- */
 /*
- * @brief This structure replaces the original UART_HandleTypdef data type definition of STM that
- *        is used in the driver.
+ * @brief This empty structure replaces the original UART_HandleTypdef data type definition of STM
+          that is used in the driver.
  */
 typedef struct {
-    int mock_uart_handle;
+    // Emtpty
 } UART_HandleTypeDef;
 
 /* --- Public variable declarations ------------------------------------------------------------ */

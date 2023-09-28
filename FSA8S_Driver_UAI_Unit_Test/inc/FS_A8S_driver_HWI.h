@@ -55,8 +55,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-// #include "stm32f4xx_hal.h"
-#include "mock_data.h"
+#include "stm32f4xx_hal.h"
 
 /* --- C++ guard ------------------------------------------------------------------------------- */
 #ifdef __cplusplus
